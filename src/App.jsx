@@ -18,10 +18,10 @@ function App() {
       {/* <CharacterCount/> */}
       {/* <TemperatureConverter/> */}
       {/* <TodoApp/> */}
-      {/* <MountJoke/> */}
+      <MountJoke/>
       {/* <StopWatch/> */}
       {/* <SearchApp /> */}
-      <UseMemo/>
+      {/* <UseMemo/> */}
         </>
   )
 }

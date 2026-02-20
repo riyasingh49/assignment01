@@ -16,9 +16,15 @@ const MountJoke = () => {
         setError("");
 
        try{
-        const response = await fetch("https://v2.jokeapi.dev/joke/Any?type=twopart");
+        const randomId = Math.floor(Math.random()*200) +1;
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${randomId}`);
         const data = await response.json();
-        setJoke({setup: data.setup, punchline: data.delivery});
+        setJoke({
+          userId: data.userId,
+          id: data.id,
+          title: data.title,
+          completed: data.completed,
+        });
        } catch(error){
         setError("Failed to fetch joke. Please try again.");
        } finally{
@@ -32,8 +38,8 @@ const MountJoke = () => {
         {loading? "fetching joke..." : error}
 
         {joke && !loading && (
-            <><p>{joke.setup}</p>
-            <p>{joke.punchline}</p>
+            <><p>{joke.id}</p>
+            <p>{joke.title}</p>
             </>
         )}
       </div>

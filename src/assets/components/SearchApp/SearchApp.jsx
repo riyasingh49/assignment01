@@ -79,10 +79,7 @@ const SearchApp = () => {
             filtered.slice(0,50).map((todo, i) => (
                 <div key={todo.id}>
                         <p>  {todo.id} User  {todo.title}  &nbsp;&nbsp;&nbsp;&nbsp; Status: {todo.completed?" Done": " Pending"}</p>
-                        <div> 
                         
-                        </div>
-                        <div></div>
                 </div>
             ))
         }

@@ -19,7 +19,7 @@ function App() {
       {/* <TodoApp/> */}
       {/* <MountJoke/> */}
       {/* <StopWatch/> */}
-      <SearchApp />
+      {/* <SearchApp /> */}
         </>
   )
 }

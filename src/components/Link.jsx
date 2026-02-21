@@ -1,11 +1,19 @@
-import React from 'react'
+import { useRouter } from '../context/RouterContext'
 
-const Link = () => {
+function Link({ to, children, style = {}, onClick }) {
+  const { navigate } = useRouter();
   return (
-    <div>
-      
-    </div>
-  )
+    <a
+      href={to}
+      style={style}
+      onClick={(e) => {
+        e.preventDefault();
+        if (onClick) onClick(e);
+        navigate(to);
+      }}
+    >
+      {children}
+    </a>
+  );
 }
-
-export default Link
+export default Link;

@@ -10,6 +10,10 @@ import MountJoke from './components/MountJoke/MountJoke'
 import StopWatch from './components/StopWatch/StopWatch'
 import SearchApp from './components/SearchApp/SearchApp'
 import UseMemo from './components/UseMemo/UseMemo'
+import { RouterProvider } from './context/RouterContext'
+import { AuthProvider } from './context/AuthContext'
+import Navbar from './components/Navbar'
+import AppRoutes from './AppRoutes'
 
 function App() {
 
@@ -18,10 +22,22 @@ function App() {
       {/* <CharacterCount/> */}
       {/* <TemperatureConverter/> */}
       {/* <TodoApp/> */}
-      <MountJoke/>
+      {/* <MountJoke/> */}
       {/* <StopWatch/> */}
       {/* <SearchApp /> */}
       {/* <UseMemo/> */}
+
+      <RouterProvider>
+        <AuthProvider>
+          <Navbar />
+          <main>
+            <AppRoutes />
+          </main>
+          <footer>
+            © 2026 @@@@@ — Built with ♥ and React
+          </footer>
+        </AuthProvider>
+      </RouterProvider>
         </>
   )
 }
